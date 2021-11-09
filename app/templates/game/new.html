@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row upload-row">
+        <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-10">
+        <form action="" class="form-inline" enctype="multipart/form-data" id="newGame">
+
+          <div class="form-group">
+            <label for="gameName">Enter Game Name:</label>
+            <input type="text" id="gameName" name="gameName" class="game-name" >
+          </div>
+          <div class="form-group">
+            <label for="uploadFile">Upload players list: </label>
+            <input type="file" id="uploadFile" name="uploadFile" class="upload-file" accept=".csv">
+
+          </div>
+        <a href="#" class="button" id="createGame"> Create Game</a>
+        </form>
+        </div>
+    </div>
+
+{% include 'new-row.html' %}
+<div class="row" style="display:none;" id="gameCodeDiv">
+    <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-10">
+            <span id="gameCode"></span>
+        </div>
+</div>
+{% include 'notify.html' %}
+{% include 'game/view-users.html' %}
+
+
+
+{% endblock content %}

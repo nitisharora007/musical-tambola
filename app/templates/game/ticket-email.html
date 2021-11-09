@@ -1,0 +1,195 @@
+<style>
+body {
+  font-family: "Danske Text";
+}
+table {
+   border-collapse: collapse;
+}
+table.project {
+  border: 1px solid #ddd;
+}
+table.project td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+  color: #1f497d;
+}
+.main
+{
+  background-color: #deeaf6;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left:20px;
+  padding-right:40px;
+}
+
+.bold {
+  font-weight: bold;
+  color: #1f497d;
+}
+.headline {
+  text-decoration: underline;
+  font-weight:bold;
+}
+.button {
+  color: #003F63;
+}
+ol.text li{
+  font-family: "Danske Text";
+  font-size:18.5px;
+  color: #1f497d;
+}
+p.text{
+  font-family: "Danske Text";
+  font-size:18.5px;
+  color: #1f497d;
+}
+.head {
+  font-family: "Danske Headline";
+  font-size:34px;
+  color: #5b9bd5;
+  padding-left:40px;
+  vertical-align:top;
+  text-align: right;
+  margin-left:30px;
+}
+.line {
+  border: 2px solid black;
+}
+ul {
+  list-style: none;
+}
+
+ul li:before {
+  content: '✓';
+}
+
+.view-ticket {
+    font-size: 18px;
+    padding: 15px;
+    margin: 5px;
+    text-decoration: none;
+    background-color: #003755;
+    color: #fff;
+    min-height: 40px;
+}
+.before-footer {
+    background-image: url('{{base_url}}/static/img/background-bottom.png');
+    background-repeat: repeat;
+    min-height: 73px;
+}
+.empty-row {
+    height:30px;
+}
+.heading {
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+</style>
+<body align='center' width="100%">
+<table class="main" cellspacing='0' cellpadding='0' width="43%" align="center">
+<tr>
+  <table cellpadding='0' cellspacing='0'>
+
+          <td>
+			<img style="width: 160px;" src="{{base_url}}/static/img/logo-sm.png" alt="MT" name="Musical Tambola" /></td>
+          <td><p class='head'>Musical Tambola Ticket</p></td>
+        </tr>
+  </table>
+</tr>
+<tr>
+  <table  cellpadding='0' cellspacing='0' width="100%">
+    <tr>
+      <td style="border-top:2px solid black;">&nbsp;</td>
+    </tr>
+  </table>
+</tr>
+<tr>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+          <td width='10%'></td>
+          <td>
+            <p class='text'>Hi {{name}},</p>
+              <p class='text'>Welcome to the <b><i>Developer Services Fun Club</i></b> !!!</p>
+                <p class='text'>Please find below your unique Ticket for today's game of Musical Tambola and the rules of the game...</p>
+
+<p class='text'>Ticket-Code: <b>{{ticket_code}}</b> </p>
+          </td>
+          <!-- <td width='10%'></td> -->
+        </tr>
+        <tr><td colspan='3'><p>&nbsp;</p></td></tr>
+        <tr><td width='10%'></td>
+            <td><table class='project'>
+    <tbody>
+    {% for row in ticket %}
+    <tr>
+        {% for col in row %}
+        <td>
+            {% if col %}
+                <span class="ticket-cell">{{col[:-4]}}</span>
+            {% endif %}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table></td>
+        </tr>
+        <tr><td colspan="2" class="empty-row">&nbsp;</td></tr>
+        <tr>
+          <td width='10%'></td>
+          <td align="center">
+            <p class='text'>
+                <a class="view-ticket" href="{{base_url}}/view-ticket?tcode={{ticket_code}}&email={{email}}">Play Online</a></a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+            <td width='10%'></td>
+            <td>
+                <p class="text">
+                  <span class="heading">How To Play:</span>
+                  <ol>
+                    <li>
+                        Click on the <b><i>Play Online</i></b> link above to access the ticket online.
+                    </li>
+                    <li>
+                        During play, you can click on the song name to strike out the song which are played.
+                    </li>
+          </ol>
+              </p>
+              <p class="text">
+                  <span class="heading">Game Rules:</span> <br/> <br/>
+              There will be 5 different categories you can win in this edition of the game:
+                  <ol>
+              <li>Fastest 3  (First Three songs struck out)</li>
+              <li>1st Row (all songs on the top row of your ticket)</li>
+              <li>2nd Row (all songs on the middle row of your ticket)</li>
+              <li>3rd Row (all songs on the bottom / last row of your ticket)</li>
+              <li>Full House 1 (all songs on your ticket)</li>
+              <li>Full House 2 (all songs on your ticket)</li>
+          </ol>
+              </p>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td width='10%'>&nbsp;</td>
+            <td height='70px'><p>
+                  <div class="before-footer"></div>
+              </p>
+            <p class='text'>Kind regards,<br/>Developer Services Fun Team</p></td>
+        </tr>
+
+
+          </td>
+          <!--<td width='10%'></td>-->
+        </tr>
+  </table>
+</tr>
+
+</table>
+
+</body>

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="row">
+
+        <div class="col-md-12" style="text-align:center;">
+            <img src="{{url_for('static', filename='img/logo.png')}}" style="width:45%" class="home-img" alt="fun" />
+        </div>
+
+    </div>
+    <div class="row content">
+        <div class="col-md-12">
+            <p class="game-desc">Musical Tambola (Must-bola) is a initative of the Danske IT, fun group working in the Developer Services. We all are abound to work in the pandemic
+            and we all know creativity just pops-up in the head and the idea poped up under the head of a Team member.
+            </p>
+            <p class="game-tagline">Let's start the real game !!! Ready for musical fun ...</p>
+
+
+            <p class="create-game-row">
+                <a href="/new-game" class="button link-button-s"> Create Game </a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

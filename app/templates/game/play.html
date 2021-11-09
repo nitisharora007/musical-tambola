@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row" style="padding-top: 30px;" >
+        <div class="col-md-6">
+            You are playing the game: <b>{{gname}}</b>
+        </div>
+        <div class="col-md-6" style="text-align:right;">
+            <a href="#" class="button" id="completeGame">End Game</a>
+        </div>
+    </div>
+    {% include 'notify.html' %}
+    {% include 'new-row.html' %}
+    <div class="row">
+        <div class="col-md-4">
+            <p class="play-btn">
+              Next Song <span class="glyphicon glyphicon-step-forward" aria-hidden="true" id="playButton"></span>
+            </p>
+
+        </div>
+        <div class="col-md-4">
+        <audio controls id="audioPlayer">
+          <source id="songPlayer" src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+        </div>
+
+        <div class="col-md-4" style="text-align:right;">
+            <span class="refresh-btn glyphicon glyphicon-refresh" style="cursor: pointer;" aria-hidden="true" id="refreshSongs">Get Played Songs</span>
+        </div>
+
+    </div>
+
+
+    {% include 'game/songs-played.html' %}
+
+<input type="hidden" id="tcode" value="" />
+<input type="hidden" id="email" value="" />
+<input type="hidden" id="gcode" value="{{gcode}}" />
+
+    <div class="row view-users" style="background-color:aliceblue;">
+        <div class="col-md-12">
+        <table class="table">
+            <tbody>
+
+            {% for elem in players %}
+                {% set link = '/view-ticket?tcode='+elem.tcode+'&email='+elem.email  %}
+
+                {% if loop.index%6 == 0 %}
+                    <tr>
+                {% endif %}
+                {% if loop.index == 1 %}
+                        <td><a href="#"><b><i>Players List: </i></b></a></td>
+                {% endif %}
+                <td>
+                    <a href="{{link}}" target="_blank">{{elem.name}}</a>
+                </td>
+
+                {% if loop.index % 6 == 5 %}
+                    </tr>
+                {% endif %}
+
+
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+{% endblock content %}

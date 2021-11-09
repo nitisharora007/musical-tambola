@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row upload-row">
+        <div class="col-md-12">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="gameCode">Enter game code: </label>
+            <input type="text" id="gameCode" class="game-code" />
+          </div>
+        <a href="#" class="button" id="getGameDetails" >Get Details</a>
+
+        </form>
+        </div>
+    </div>
+
+{% include 'notify.html' %}
+{% include 'game/view-users.html' %}
+{% endblock content %}

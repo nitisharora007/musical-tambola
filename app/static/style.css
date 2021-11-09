@@ -1,0 +1,140 @@
+.navbar-default {
+    background-color:#003755;
+    border-color: #003755;
+}
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover{
+    background-color:#003755;
+    color: #fff;
+}
+.empty-large-row {
+    height: 40%;
+}
+.logo {
+    text-align:right;
+}
+.home-img {
+    width: 90%;
+}
+.content {
+    padding-top: 2%;
+}
+.before-footer {
+    position: relative;
+    left: 0px;
+    bottom: 20px;
+    right: 0px;
+    background-image: url('/static/img/background-bottom.png');
+    background-repeat: repeat;
+    color: white;
+    min-height: 75px;
+    min-width: 100%;
+}
+.footer {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #003755;
+    color: white;
+    text-align: center;
+}
+.game-desc {
+    font-size: 30px;
+    padding-bottom: 40px;
+    font-family: Jokerman;
+    color: purple;
+}
+.game-tagline {
+    font-size: 22px;
+    font-family: Jokerman;
+    color: purple;
+}
+
+.button {
+    background-color:#003755;
+    color: #fff;
+    padding: 10px;
+}
+
+.button:hover, .button:focus {
+    background-color:#003755;
+    color: #fff;
+}
+
+.link-button-s {
+    font-size: 14px;
+    padding:15px;
+    margin:5px;
+    text-decoration: none;
+}
+
+a, a:hover, a:focus {
+    font-size: 14px;
+
+    text-decoration: none;
+}
+.create-game-row {
+    text-align: center;
+}
+.upload-row {
+    padding-right: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.upload-file {
+    display: inline-block !important;
+}
+
+.play-btn {
+    float:right;
+    font-size: 50px;
+}
+.refresh-btn  {
+    font-size: 18px;
+}
+.view-songs-played {
+    font-size: 20px;
+}
+
+.ticket-cell:hover {
+    cursor: pointer;
+}
+
+.ticket-cell-cut {
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+div.tambola-ticket {
+    background-color: #99c1d2;
+    font-weight: bold;
+    color: #312c2c;
+    border-style: dotted;
+    border-radius: 15px;
+}
+
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 4px solid #000;
+}
+
+.ticket-table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.notification {
+    padding-top: 30px;
+}
+
+p.notify-message {
+    font-size: 16px;
+    background: #c2aeea;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+}
